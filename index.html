@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Business Performance & Profitability Analysis</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Scroll Animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Prism.js (SQL Syntax Highlighting) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- Lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .hero-bg { background: linear-gradient(135deg, #3b82f6, #9333ea); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="hero-bg h-screen flex flex-col items-center justify-center text-white text-center">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">Retail Business Performance <br>& Profitability Analysis</h1>
+    <p class="text-lg md:text-2xl mb-8">SQL + Power BI + Dashboard Insights</p>
+    <a href="#about" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition">Explore Project ↓</a>
+  </section>
+
+  <!-- About Project -->
+  <section id="about" class="py-20 px-8 max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">About the Project</h2>
+    <p class="mb-6">Objective: Analyze transactional retail data to uncover profit-draining categories, optimize inventory turnover, and identify seasonal product behavior.</p>
+    <div class="flex gap-6">
+      <img src="images/sql.png" alt="SQL" class="h-16" />
+      <img src="images/powerbi.png" alt="Power BI" class="h-16" />
+      <img src="images/excel.png" alt="Excel" class="h-16" />
+      <img src="images/tableau.png" alt="Tableau" class="h-16" />
+    </div>
+  </section>
+
+  <!-- Data & SQL -->
+  <section id="data-sql" class="py-20 px-8 bg-gray-100" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Data & SQL</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- CSV Table -->
+      <div class="bg-white p-6 shadow rounded-xl">
+        <h3 class="text-xl font-semibold mb-4">Raw Data (CSV)</h3>
+        <table id="csvTable" class="display w-full"></table>
+        <a href="SuperStore_raw_data.csv" download class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg">⬇️ Download CSV</a>
+      </div>
+
+      <!-- SQL Code -->
+      <div class="bg-white p-6 shadow rounded-xl">
+        <h3 class="text-xl font-semibold mb-4">SQL Queries</h3>
+        <pre><code class="language-sql">
+-- Example query
+SELECT Category, SUM(Profit) AS TotalProfit
+FROM SuperStore
+GROUP BY Category
+ORDER BY TotalProfit DESC;
+        </code></pre>
+        <a href="retail_analysis_queries.sql" download class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg">⬇️ Download SQL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard & Visuals -->
+  <section id="dashboard" class="py-20 px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Dashboard & Visuals</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="images/dashboard1.png" data-lightbox="dashboards"><img src="images/dashboard1.png" class="rounded-xl shadow-lg hover:scale-105 transition" /></a>
+      <a href="images/dashboard2.png" data-lightbox="dashboards"><img src="images/dashboard2.png" class="rounded-xl shadow-lg hover:scale-105 transition" /></a>
+    </div>
+    <a href="Retail_analysi.pbix" download class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg">⬇️ Download PBIX</a>
+  </section>
+
+  <!-- Report Section -->
+  <section id="report" class="py-20 px-8 bg-gray-100" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Report</h2>
+    <iframe src="Retail_SQL_Report_Vishal.pdf" class="w-full h-[600px] rounded-xl shadow-lg"></iframe>
+    <a href="Retail_SQL_Report_Vishal.pdf" download class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg">⬇️ Download Report</a>
+  </section>
+
+  <!-- Insights -->
+  <section id="insights" class="py-20 px-8" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Insights & Recommendations</h2>
+    <div class="grid md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white p-6 shadow rounded-xl hover:scale-105 transition">🛒 <h3>Slow-moving Products</h3></div>
+      <div class="bg-white p-6 shadow rounded-xl hover:scale-105 transition">📦 <h3>Overstocked Items</h3></div>
+      <div class="bg-white p-6 shadow rounded-xl hover:scale-105 transition">💰 <h3>High-margin Categories</h3></div>
+      <div class="bg-white p-6 shadow rounded-xl hover:scale-105 transition">⏳ <h3>Seasonal Demand</h3></div>
+    </div>
+  </section>
+
+  <!-- Download Center -->
+  <section id="downloads" class="py-20 px-8 bg-gray-100" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center">Download Center</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 shadow rounded-xl">
+        <h3 class="font-semibold mb-2">Raw Data</h3>
+        <a href="SuperStore_raw_data.csv" download class="block bg-blue-600 text-white px-4 py-2 rounded-lg">Download CSV</a>
+      </div>
+      <div class="bg-white p-6 shadow rounded-xl">
+        <h3 class="font-semibold mb-2">SQL Queries</h3>
+        <a href="retail_analysis_queries.sql" download class="block bg-blue-600 text-white px-4 py-2 rounded-lg">Download SQL</a>
+      </div>
+      <div class="bg-white p-6 shadow rounded-xl">
+        <h3 class="font-semibold mb-2">Final Report</h3>
+        <a href="Retail_SQL_Report_Vishal.pdf" download class="block bg-blue-600 text-white px-4 py-2 rounded-lg">Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-gray-900 text-gray-300 text-center">
+    <p>© 2025 Vishal Kumar | <a href="mailto:youremail@example.com" class="underline">Contact</a> | <a href="https://github.com/vishalnfskumar" class="underline">GitHub</a></p>
+    <a href="#top" class="block mt-4 text-blue-400 hover:text-blue-200">↑ Back to Top</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init();
+
+    // CSV Load
+    $(document).ready(function() {
+      $('#csvTable').DataTable({
+        ajax: 'SuperStore_raw_data.csv'
+      });
+    });
+
+    // GSAP hero animation
+    gsap.from("h1", {y: 50, opacity: 0, duration: 1});
+    gsap.from("p", {y: 20, opacity: 0, delay: 0.5, duration: 1});
+  </script>
+</body>
+</html>
